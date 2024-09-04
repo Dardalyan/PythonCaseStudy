@@ -13,7 +13,7 @@ class StatusBasedAnalysis(APIView):
         """
 
         return Response(data={
-            'message':'Total revenue and conversions for each status type has been determined.',
+            'message':'Total revenue and total conversions for all status type have been determined.',
             'result':MockupInterviewResult().status_based_analysis
         },
             status=status.HTTP_200_OK)

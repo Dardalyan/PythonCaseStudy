@@ -12,7 +12,7 @@ class ConversionRate(APIView):
         """
 
         return Response(data={
-            'message':'Conversion Rate Calculation Results Has Been Provided.',
+            'message':'Conversion rate has been calculated for all customers.',
             'result':MockupInterviewResult().conversion_rate_calculation
         },
             status=status.HTTP_200_OK)

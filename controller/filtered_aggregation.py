@@ -12,7 +12,7 @@ class FilteredAggregation(APIView):
         """
 
         return Response(data={
-            'message':'Dataset filtering by the type is CONVERSION, filtered set aggregation and avg. revenue and conversions per customer_id has been provided. ',
+            'message':'Dataset filtering by the type which is CONVERSION, filtered dataset aggregation,  avarage revenue and avarage conversions per customer_id have been provided. ',
             'result':MockupInterviewResult().filter_and_aggregate
         },
             status=status.HTTP_200_OK)

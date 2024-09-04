@@ -12,7 +12,7 @@ class CategoryAndTypePerformance(APIView):
         """
 
         return Response(data={
-            'message':'Total revenue and conversions has been calculated AND (category-type) combination that generates the most conversions has been identified.',
+            'message':'Total revenue and total conversions have been calculated and (category-type) combination that generates the most conversions has been identified.',
             'result':MockupInterviewResult().category_and_type_performance
         },
             status=status.HTTP_200_OK)
