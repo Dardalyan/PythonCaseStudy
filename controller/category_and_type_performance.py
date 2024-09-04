@@ -8,7 +8,7 @@ class CategoryAndTypePerformance(APIView):
 
     def get(self,request,**kwargs):
         """
-        TASK 2 - Endpoint 3: /api/conversion-rate/: Returns the total revenue and conversions grouped by category and type. And also returns the top-performing category and type combination.
+        TASK 2 - Endpoint 3: /api/category-type-performance/: Returns the total revenue and conversions grouped by category and type. And also returns the top-performing category and type combination.
         """
 
         return Response(data={
