@@ -1,9 +1,13 @@
+```
+NOTE: In the project files, there are describtions to explain what is happening in those code lines.
+```
 
-1) CONVERSION RATE CALCULATION ENPOINT RESPONSE SCREENSHOT:
+
+1) CONVERSION RATE CALCULATION ENDPOINT RESPONSE SCREENSHOT:
 
    <img width="1505" alt="ConversionRate" src="https://github.com/user-attachments/assets/4d8a7d0b-45f5-41d0-889a-a43071148ac5">
 
-   THE WHOLE CONVERSION RATE CALCULATION ENPOINT RESPONSE:
+   THE WHOLE CONVERSION RATE CALCULATION ENDPOINT RESPONSE:
 
  ```
       {
@@ -30,9 +34,8 @@
 ```
 
 
-
    
-2) STATUS-BASED ANALYSIS ENPOINT RESPONSE SCREENSHOT:
+2) STATUS-BASED ANALYSIS ENDPOINT RESPONSE SCREENSHOT:
 
     ```
     NOTE:  "Provides a summary of the distribution of status across different types and categories." As requested here,
@@ -43,7 +46,7 @@
 
    <img width="1505" alt="StatusBased Analysis 2" src="https://github.com/user-attachments/assets/0d6394a1-3248-4e63-83e4-50b06a869bad">
 
-    THE WHOLE STATUS-BASED ANALYSIS ENPOINT RESPONSE:
+    THE WHOLE STATUS-BASED ANALYSIS ENDPOINT RESPONSE:
 
 ```
       {
@@ -55,28 +58,8 @@
                 "total_conversions": 25916,
                 "data": [
                     {
-                        "category": "TOYS",
-                        "type": "AWARENESS",
-                        "count": 26
-                    },
-                    {
-                        "category": "ELECTRONICS",
-                        "type": "CONVERSION",
-                        "count": 15
-                    },
-                    {
-                        "category": "FASHION",
+                        "category": "HOME",
                         "type": "ENGAGEMENT",
-                        "count": 20
-                    },
-                    {
-                        "category": "TOYS",
-                        "type": "CONVERSION",
-                        "count": 15
-                    },
-                    {
-                        "category": "FASHION",
-                        "type": "CONVERSION",
                         "count": 26
                     },
                     {
@@ -85,9 +68,9 @@
                         "count": 21
                     },
                     {
-                        "category": "TOYS",
-                        "type": "ENGAGEMENT",
-                        "count": 19
+                        "category": "HOME",
+                        "type": "AWARENESS",
+                        "count": 16
                     },
                     {
                         "category": "FASHION",
@@ -95,24 +78,44 @@
                         "count": 32
                     },
                     {
+                        "category": "TOYS",
+                        "type": "AWARENESS",
+                        "count": 26
+                    },
+                    {
+                        "category": "FASHION",
+                        "type": "CONVERSION",
+                        "count": 26
+                    },
+                    {
+                        "category": "ELECTRONICS",
+                        "type": "AWARENESS",
+                        "count": 16
+                    },
+                    {
                         "category": "ELECTRONICS",
                         "type": "ENGAGEMENT",
                         "count": 24
                     },
                     {
-                        "category": "HOME",
-                        "type": "AWARENESS",
-                        "count": 16
+                        "category": "TOYS",
+                        "type": "ENGAGEMENT",
+                        "count": 19
                     },
                     {
                         "category": "ELECTRONICS",
-                        "type": "AWARENESS",
-                        "count": 16
+                        "type": "CONVERSION",
+                        "count": 15
                     },
                     {
-                        "category": "HOME",
+                        "category": "FASHION",
                         "type": "ENGAGEMENT",
-                        "count": 26
+                        "count": 20
+                    },
+                    {
+                        "category": "TOYS",
+                        "type": "CONVERSION",
+                        "count": 15
                     }
                 ]
             },
@@ -121,13 +124,8 @@
                 "total_conversions": 24439,
                 "data": [
                     {
-                        "category": "FASHION",
+                        "category": "TOYS",
                         "type": "ENGAGEMENT",
-                        "count": 18
-                    },
-                    {
-                        "category": "FASHION",
-                        "type": "AWARENESS",
                         "count": 24
                     },
                     {
@@ -136,9 +134,24 @@
                         "count": 25
                     },
                     {
+                        "category": "TOYS",
+                        "type": "AWARENESS",
+                        "count": 17
+                    },
+                    {
                         "category": "ELECTRONICS",
-                        "type": "ENGAGEMENT",
-                        "count": 20
+                        "type": "AWARENESS",
+                        "count": 26
+                    },
+                    {
+                        "category": "TOYS",
+                        "type": "CONVERSION",
+                        "count": 17
+                    },
+                    {
+                        "category": "FASHION",
+                        "type": "AWARENESS",
+                        "count": 24
                     },
                     {
                         "category": "FASHION",
@@ -146,19 +159,9 @@
                         "count": 26
                     },
                     {
-                        "category": "ELECTRONICS",
-                        "type": "AWARENESS",
-                        "count": 26
-                    },
-                    {
-                        "category": "TOYS",
-                        "type": "AWARENESS",
-                        "count": 17
-                    },
-                    {
-                        "category": "TOYS",
-                        "type": "CONVERSION",
-                        "count": 17
+                        "category": "FASHION",
+                        "type": "ENGAGEMENT",
+                        "count": 18
                     },
                     {
                         "category": "ELECTRONICS",
@@ -166,9 +169,9 @@
                         "count": 19
                     },
                     {
-                        "category": "HOME",
-                        "type": "CONVERSION",
-                        "count": 13
+                        "category": "ELECTRONICS",
+                        "type": "ENGAGEMENT",
+                        "count": 20
                     },
                     {
                         "category": "HOME",
@@ -176,9 +179,9 @@
                         "count": 15
                     },
                     {
-                        "category": "TOYS",
-                        "type": "ENGAGEMENT",
-                        "count": 24
+                        "category": "HOME",
+                        "type": "CONVERSION",
+                        "count": 13
                     }
                 ]
             }
@@ -188,32 +191,71 @@
  ```
 
    
-3) CATEGORY AND TYPE PERFORMANCE ENPOINT RESPONSE SCREENSHOT:
+3) CATEGORY AND TYPE PERFORMANCE ENDPOINT RESPONSE SCREENSHOT:
 
-    <img width="1505" alt="CategoryAndType Performance" src="https://github.com/user-attachments/assets/6db4569c-dd2b-42cc-8c44-ad0cb25bed1c">
+   ![CategoryAndType Performance.png](..%2F..%2FCategoryAndType%20Performance.png)
 
-    THE WHOLE CATEGORY AND TYPE PERFORMANCE ENPOINT RESPONSE:
+    THE WHOLE CATEGORY AND TYPE PERFORMANCE ENDPOINT RESPONSE:
 
 ```
       {
-    "message": "Total revenue and total conversions have been calculated and (category-type) combination that generates the most conversions has been identified.",
+    "message": "Total revenue and total conversions have been calculated for all combinations and (category-type) combination that generates the most conversions has been identified.",
     "result": {
-        "top_performed": {
-            "('FASHION', 'CONVERSION')": 5271
+        "top_performed_conversion": {
+            "('FASHION', 'CONVERSION')": {
+                "total_conversion": 5271,
+                "total_revenue": 1415989.9500000002
+            }
         },
         "all_combined_data": {
-            "('FASHION', 'ENGAGEMENT')": 3625,
-            "('FASHION', 'AWARENESS')": 5119,
-            "('ELECTRONICS', 'AWARENESS')": 3782,
-            "('ELECTRONICS', 'CONVERSION')": 3448,
-            "('HOME', 'CONVERSION')": 3829,
-            "('TOYS', 'ENGAGEMENT')": 4199,
-            "('FASHION', 'CONVERSION')": 5271,
-            "('TOYS', 'CONVERSION')": 3323,
-            "('HOME', 'ENGAGEMENT')": 5036,
-            "('ELECTRONICS', 'ENGAGEMENT')": 4952,
-            "('TOYS', 'AWARENESS')": 4025,
-            "('HOME', 'AWARENESS')": 3746
+            "('FASHION', 'ENGAGEMENT')": {
+                "total_conversion": 3625,
+                "total_revenue": 1222168.42
+            },
+            "('FASHION', 'AWARENESS')": {
+                "total_conversion": 5119,
+                "total_revenue": 1301353.4100000001
+            },
+            "('ELECTRONICS', 'AWARENESS')": {
+                "total_conversion": 3782,
+                "total_revenue": 1145380.7700000003
+            },
+            "('ELECTRONICS', 'CONVERSION')": {
+                "total_conversion": 3448,
+                "total_revenue": 720999.9100000001
+            },
+            "('HOME', 'CONVERSION')": {
+                "total_conversion": 3829,
+                "total_revenue": 865975.6399999998
+            },
+            "('TOYS', 'ENGAGEMENT')": {
+                "total_conversion": 4199,
+                "total_revenue": 985486.8200000001
+            },
+            "('FASHION', 'CONVERSION')": {
+                "total_conversion": 5271,
+                "total_revenue": 1415989.9500000002
+            },
+            "('TOYS', 'CONVERSION')": {
+                "total_conversion": 3323,
+                "total_revenue": 809981.13
+            },
+            "('HOME', 'ENGAGEMENT')": {
+                "total_conversion": 5036,
+                "total_revenue": 1223794.8299999998
+            },
+            "('ELECTRONICS', 'ENGAGEMENT')": {
+                "total_conversion": 4952,
+                "total_revenue": 1168029.5000000002
+            },
+            "('TOYS', 'AWARENESS')": {
+                "total_conversion": 4025,
+                "total_revenue": 1049368.3799999997
+            },
+            "('HOME', 'AWARENESS')": {
+                "total_conversion": 3746,
+                "total_revenue": 772101.35
+            }
         }
     }
 }
@@ -221,28 +263,28 @@
 ```
 
    
-4) FILTER AND AGGREGATE ENPOINT RESPONSE SCREENSHOT:
+4) FILTER AND AGGREGATE ENDPOINT RESPONSE SCREENSHOT:
    
-    <img width="1505" alt="FilterAndAggregate" src="https://github.com/user-attachments/assets/9874cde1-8e62-4727-844c-517cdcb9d80c">
+    ![FilterAndAggregate.png](..%2F..%2FFilterAndAggregate.png)
 
-   THE WHOLE FILTER AND AGGREGATE ENPOINT RESPONSE:
+   THE WHOLE FILTER AND AGGREGATE ENDPOINT RESPONSE:
 
 ```
       {
-    "message": "Dataset filtering by the type which is CONVERSION, filtered dataset aggregation,  avarage revenue and avarage conversions per customer_id have been provided. ",
+    "message": "Dataset filtering by the type which is CONVERSION, filtered dataset aggregation, average revenue and average conversions per customer_id have been provided. ",
     "result": {
         "average": {
             "Customer A": {
-                "avarage_revenue": 26084.47520833333,
-                "avarage_conversions": 105.14583333333333
+                "average_revenue": 26084.47520833333,
+                "average_conversions": 105.14583333333333
             },
             "Customer B": {
-                "avarage_revenue": 24771.766250000008,
-                "avarage_conversions": 112.19642857142857
+                "average_revenue": 24771.766250000008,
+                "average_conversions": 112.19642857142857
             },
             "Customer C": {
-                "avarage_revenue": 24451.518958333338,
-                "avarage_conversions": 94.60416666666667
+                "average_revenue": 24451.518958333338,
+                "average_conversions": 94.60416666666667
             }
         },
         "all_aggregated_data": [
