@@ -12,6 +12,7 @@ class StatusBasedAnalysis(APIView):
         TASK 2 - Endpoint 2: /api/status-distribution/: Provides a summary of the distribution of status across different types and categories. And also includes total revenue and conversions for each status.
         """
 
+        # In response, result data comes from serializer.mockupInterviewResult.MockupInterviewResult() class
         return Response(data={
             'message':'Total revenue and total conversions for all status type have been determined.',
             'result':MockupInterviewResult().status_based_analysis

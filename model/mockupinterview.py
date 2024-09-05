@@ -6,6 +6,9 @@ import pandas as pd
 
 
 class MockUpInterview:
+    """
+    This class is designed to handle subtasks of the TASK 1.
+    """
 
     __dataSet = pd.read_csv('mockupinterviewdata.csv') #Keys->['customer_id', 'revenue', 'conversions', 'status', 'type', 'category','date', 'impressions', 'clicks']
 
@@ -33,6 +36,8 @@ class MockUpInterview:
         """
 
         total = 0
+
+        # Summary: The total conversion calculation for given customer_id
         for id, conversion in zip(cls.__dataSet['customer_id'], cls.__dataSet['conversions']):
             if id == customer_id:
                 total += conversion
@@ -47,11 +52,13 @@ class MockUpInterview:
         """
 
         total = 0
+
+        # Summary: The total revenue calculation for given customer_id
         for id, revenue in zip(cls.__dataSet['customer_id'], cls.__dataSet['revenue']):
             if id == customer_id:
                 total += revenue
-        #print(f"{customer_id} 's Total Revenue calculated as {total} !") #->  A: 4364310.87 , B: 4301441.729999999, C:4014877.5100000007
 
+        #print(f"{customer_id} 's Total Revenue calculated as {total} !") #->  A: 4364310.87 , B: 4301441.729999999, C:4014877.5100000007
         return total
 
     @classmethod
@@ -65,12 +72,11 @@ class MockUpInterview:
             'Customer C':None
         }
 
+        # Description: Calculation of conversion by using the formula (conversion/revenue)*100 for all customer_ids-> in terms of percentage !
         for i in totals.keys():
             totals[i] = (cls.__numOfConversions(i) / cls.__numOfRevenue(i))*100
 
         #print(f"-> The ratio per customer {totals}") #-> The ratio per customer {'Customer A': 0.3924789161501688, 'Customer B': 0.40507348683763306, 'Customer C': 0.39358610469787403}
-
-
         return totals
 
     @classmethod
@@ -79,20 +85,23 @@ class MockUpInterview:
         TASK 1 - Conversion Rate Calculation:
         Identifies the customer who has the maximum and the minimum ratio AND returns also the all ratio data.
         """
+
+        # Keeping rates for all customers
         rates = cls.__conversion_rate_cal()
 
         maxRate = max(rates.values())
         minRate = min(rates.values())
 
-
+        # Lambda function to find customer ID by using maximum and minimum values
         find_id = lambda x: cls.__customer_id_list[0] if x == rates[cls.__customer_id_list[0]] else cls.__customer_id_list[1]\
             if x == rates[cls.__customer_id_list[1]] else cls.__customer_id_list[2]\
             if x == rates[cls.__customer_id_list[2]] else None
 
-
+        # using lambda function
         customer_id_with_max = find_id(maxRate)
         customer_id_with_min = find_id(minRate)
 
+        # Returning result in dict type to use them later on the Serializer Result class.
         result = {
             'max_rate':{
                 'customer_id':customer_id_with_max,
@@ -114,24 +123,31 @@ class MockUpInterview:
         """
         TASK 1 - 2) Status-Based Analysis: Determines the total revenue and conversions per status.
         """
+        # Arranging dictionaries for all status types (hidden vs enabled) for some information requested by the task.
         hidden = {'total_revenue': 0, 'total_conversions': 0, 'data': set()}
         enabled = {'total_revenue': 0, 'total_conversions': 0, 'data': set()}
 
+        # Temporary lists
         temp_enabled = []
         temp_hidden = []
 
+        # Filtering data set and taking status, revenue, conversion, category and type for all rows
         for status, revenue, conversion, category, typ in zip(cls.__dataSet['status'], cls.__dataSet['revenue'],
                                                               cls.__dataSet['conversions'], cls.__dataSet['category'],
                                                               cls.__dataSet['type']):
+            # Status checking...
             if status == cls.__statusTypes[1]:
                 hidden['total_revenue'] += revenue
                 hidden['total_conversions'] += conversion
                 temp_hidden.append((category, typ))
+
+            # Status checking...
             if status == cls.__statusTypes[0]:
                 enabled['total_revenue'] += revenue
                 enabled['total_conversions'] += conversion
                 temp_enabled.append((category, typ))
 
+        # Adding information from temporary lists by adding extra field count. (Count: How many times occurs)
         for i in temp_hidden:
             hidden['data'].add((i[0], i[1], temp_hidden.count(i)))
 
@@ -148,7 +164,7 @@ class MockUpInterview:
         #print(f"->The total revenue and conversions with status = {cls.__statusTypes[0]} : {enabled['total_revenue']}  and {enabled['total_conversions']} \n ->The all data with Status = {cls.__statusTypes[0]}  : {enabled['data']} ")
         #print(f"->The total revenue and conversions with status = {cls.__statusTypes[1]} : {hidden['total_revenue']}  and {hidden['total_conversions']} \n ->The all data with Status = {cls.__statusTypes[1]}  : {hidden['data']} ")
 
-
+        # Returning result in dict type to use them later on the Serializer Result class.
         return {
             'status': {
                 'HIDDEN': hidden,
@@ -163,53 +179,36 @@ class MockUpInterview:
                     AND Identifies the category and type combination that generates the most conversions.
         """
 
-        total_revenue = {'total_revenue_per_category':{},'total_revenue_per_type':{}}
-        total_conversion = {'total_conversion_per_category': {},'total_conversion_per_type': {}}
 
+        # Initially empty dict for category-type combination to hold their total conversions and total revenue
         combinationOfTheMostConvs = {}
 
-        for cat_name in cls.__categories:
-            total_revenue['total_revenue_per_category'][cat_name] = 0
-            total_conversion['total_conversion_per_category'][cat_name] = 0
-            for revenue, conversions, category in zip(cls.__dataSet['revenue'], cls.__dataSet['conversions'], cls.__dataSet['category']):
-                if cat_name == category:
-                    total_revenue['total_revenue_per_category'][cat_name]+= revenue
-                    total_conversion['total_conversion_per_category'][cat_name] += conversions
-
-        for type_name in cls.__types:
-            total_revenue['total_revenue_per_type'][type_name] = 0
-            total_conversion['total_conversion_per_type'][type_name] = 0
-            for revenue, conversions, types in zip(cls.__dataSet['revenue'], cls.__dataSet['conversions'], cls.__dataSet['type']):
-                if type_name == types:
-                    total_revenue['total_revenue_per_type'][type_name] += revenue
-                    total_conversion['total_conversion_per_type'][type_name] += conversions
-
-
-        #print(f"-> The Total revenue per category : {total_revenue['total_revenue_per_category']}")
-        #print(f"-> The Total revenue per type : {total_revenue['total_revenue_per_type']}")
-        #print(f"-> The Total conversion per category : {total_conversion['total_conversion_per_category']}")
-        #print(f"-> The Total conversion per type : {total_conversion['total_conversion_per_type']}")
-
-
-        for category, type, conversion in zip(cls.__dataSet['category'], cls.__dataSet['type'], cls.__dataSet['conversions']):
+        # Filtering dataset by category, type,conversion and revenue for all rows
+        for category, type, conversion, revenue in zip(cls.__dataSet['category'], cls.__dataSet['type'], cls.__dataSet['conversions'],cls.__dataSet['revenue']):
             if not (category,type).__str__() in  combinationOfTheMostConvs.keys():
-                combinationOfTheMostConvs[(category, type).__str__()] = conversion
+                combinationOfTheMostConvs[(category, type).__str__()]={'total_conversion':conversion,'total_revenue':revenue}
             else:
-                combinationOfTheMostConvs[(category, type).__str__()] += conversion
+                combinationOfTheMostConvs[(category, type).__str__()]['total_conversion'] += conversion
+                combinationOfTheMostConvs[(category, type).__str__()]['total_revenue'] += revenue
 
-        #print(f"->The conversions of category-type combinations : {combinationOfTheMostConvs}") #-> {('FASHION', 'ENGAGEMENT'): 3625, ('FASHION', 'AWARENESS'): 5119, ('ELECTRONICS', 'AWARENESS'): 3782, ('ELECTRONICS', 'CONVERSION'): 3448, ('HOME', 'CONVERSION'): 3829, ('TOYS', 'ENGAGEMENT'): 4199, ('FASHION', 'CONVERSION'): 5271, ('TOYS', 'CONVERSION'): 3323, ('HOME', 'ENGAGEMENT'): 5036, ('ELECTRONICS', 'ENGAGEMENT'): 4952, ('TOYS', 'AWARENESS'): 4025, ('HOME', 'AWARENESS'): 3746}
+        #print(f"->The total conversions and total revenues of category-type combinations : {combinationOfTheMostConvs}")
 
+        # Initially None -> To hold top performed category-type combination in terms of conversion
         top = None
 
+        # A Temporary sorted list to get maximum conversion as requested by the task
+        convs = sorted([list(combinationOfTheMostConvs[i].values())[0] for i in combinationOfTheMostConvs])
+
+        # Defining the top performed combination
         for i in combinationOfTheMostConvs:
-            if combinationOfTheMostConvs[i] == sorted(combinationOfTheMostConvs.values())[-1]:
-                top = {i:combinationOfTheMostConvs[i]}
+            if combinationOfTheMostConvs[i]['total_conversion'] == convs[-1]:
+                top = {i: combinationOfTheMostConvs[i]}
 
         #print(f"->The category and type combination that generates the most conversions is {top}")
 
-
+        # Returning result in dict type to use them later on the Serializer Result class.
         return {
-            'top_performed':top,
+            'top_performed_conversion':top,
             'all_combined_data':combinationOfTheMostConvs
         }
 
@@ -219,9 +218,12 @@ class MockUpInterview:
         TASK 1 - 4) Filter and Aggregate: Filters rows according to type is CONVERSION. And calculates avg. revenue and conversions for the filtered data.
         """
 
+        # Empty Filtered data list
         filtered_data = []
-        avarage_info = {}
+        # Initial dict for average information to hold all aggregated data and to hold average revenue, average conversions for all customer_ids.
+        average_info = {}
 
+        # Filtering data
         for customer_id, revenue, conversions, typ in zip(cls.__dataSet['customer_id'],cls.__dataSet['revenue'],cls.__dataSet['conversions'],cls.__dataSet['type']):
             if typ == cls.__types[1]:
                 filtered_data.append({
@@ -231,7 +233,7 @@ class MockUpInterview:
                     'type': typ
                 })
 
-
+        # For each customer id, average revenue and conversions are being calculated...
         for id in cls.__customer_id_list:
             total_rev = 0
             total_conv = 0
@@ -243,12 +245,13 @@ class MockUpInterview:
                     count += 1
                     #print(f"->Customer ID: {id}, Revenue: {data['revenue']}, Conversions: {data['conversions']}, Type: {data['type']}, Updated Total Revenue: {total_rev}, Updated Total Conversion: {total_conv}")
 
-            avarage_info[id] = {'avarage_revenue':total_rev/count, 'avarage_conversions':total_conv/count}
+            average_info[id] = {'average_revenue':total_rev/count, 'average_conversions':total_conv/count}
 
         #print(f"\n -> Avarage Revenue and Avarage Conversions Per Customer ID : {avarage_info}")
 
+        # Returning result in dict type to use them later on the Serializer Result class.
         return {
-            'average': avarage_info,
+            'average': average_info,
             'all_aggregated_data': filtered_data
         }
 

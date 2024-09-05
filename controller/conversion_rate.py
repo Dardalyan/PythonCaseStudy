@@ -11,6 +11,7 @@ class ConversionRate(APIView):
         TASK 2 - Endpoint 1: /api/conversion-rate/: Returns the conversion rate for each customer_id, along with the highest and lowest conversion rates.
         """
 
+        # In response, result data comes from serializer.mockupInterviewResult.MockupInterviewResult() class
         return Response(data={
             'message':'Conversion rate has been calculated for all customers.',
             'result':MockupInterviewResult().conversion_rate_calculation
