@@ -1,5 +1,5 @@
 ```
-NOTE: In the project files, there are describtions to explain what is happening in those code lines.
+NOTE: In the project files, there are descriptions to explain what is happening in those code lines.
 ```
 
 
@@ -42,9 +42,10 @@ NOTE: In the project files, there are describtions to explain what is happening 
             "count" in the JSON response below means how many times these type-category pairs data occur.
     ```
    
-   <img width="1505" alt="StatusBased Analysis" src="https://github.com/user-attachments/assets/890f0756-3a2b-4500-a5bc-17c2871542dc">
+   <img width="1505" alt="StatusBased Analysis" src="https://github.com/user-attachments/assets/aceb49a0-c8e4-4b1b-bd1e-42aea79f2bca">
 
-   <img width="1505" alt="StatusBased Analysis 2" src="https://github.com/user-attachments/assets/0d6394a1-3248-4e63-83e4-50b06a869bad">
+   <img width="1505" alt="StatusBased Analysis 2" src="https://github.com/user-attachments/assets/f0aee1a2-3154-425d-b753-a7dbe7fe0b6b">
+
 
     THE WHOLE STATUS-BASED ANALYSIS ENDPOINT RESPONSE:
 
@@ -57,6 +58,26 @@ NOTE: In the project files, there are describtions to explain what is happening 
                 "total_revenue": 6558736.779999998,
                 "total_conversions": 25916,
                 "data": [
+                    {
+                        "category": "TOYS",
+                        "type": "AWARENESS",
+                        "count": 26
+                    },
+                    {
+                        "category": "TOYS",
+                        "type": "CONVERSION",
+                        "count": 15
+                    },
+                    {
+                        "category": "FASHION",
+                        "type": "CONVERSION",
+                        "count": 26
+                    },
+                    {
+                        "category": "ELECTRONICS",
+                        "type": "ENGAGEMENT",
+                        "count": 24
+                    },
                     {
                         "category": "HOME",
                         "type": "ENGAGEMENT",
@@ -73,29 +94,9 @@ NOTE: In the project files, there are describtions to explain what is happening 
                         "count": 16
                     },
                     {
-                        "category": "FASHION",
-                        "type": "AWARENESS",
-                        "count": 32
-                    },
-                    {
-                        "category": "TOYS",
-                        "type": "AWARENESS",
-                        "count": 26
-                    },
-                    {
-                        "category": "FASHION",
+                        "category": "ELECTRONICS",
                         "type": "CONVERSION",
-                        "count": 26
-                    },
-                    {
-                        "category": "ELECTRONICS",
-                        "type": "AWARENESS",
-                        "count": 16
-                    },
-                    {
-                        "category": "ELECTRONICS",
-                        "type": "ENGAGEMENT",
-                        "count": 24
+                        "count": 15
                     },
                     {
                         "category": "TOYS",
@@ -104,8 +105,8 @@ NOTE: In the project files, there are describtions to explain what is happening 
                     },
                     {
                         "category": "ELECTRONICS",
-                        "type": "CONVERSION",
-                        "count": 15
+                        "type": "AWARENESS",
+                        "count": 16
                     },
                     {
                         "category": "FASHION",
@@ -113,9 +114,9 @@ NOTE: In the project files, there are describtions to explain what is happening 
                         "count": 20
                     },
                     {
-                        "category": "TOYS",
-                        "type": "CONVERSION",
-                        "count": 15
+                        "category": "FASHION",
+                        "type": "AWARENESS",
+                        "count": 32
                     }
                 ]
             },
@@ -129,24 +130,14 @@ NOTE: In the project files, there are describtions to explain what is happening 
                         "count": 24
                     },
                     {
-                        "category": "HOME",
-                        "type": "ENGAGEMENT",
-                        "count": 25
-                    },
-                    {
                         "category": "TOYS",
                         "type": "AWARENESS",
                         "count": 17
                     },
                     {
                         "category": "ELECTRONICS",
-                        "type": "AWARENESS",
-                        "count": 26
-                    },
-                    {
-                        "category": "TOYS",
                         "type": "CONVERSION",
-                        "count": 17
+                        "count": 19
                     },
                     {
                         "category": "FASHION",
@@ -165,18 +156,28 @@ NOTE: In the project files, there are describtions to explain what is happening 
                     },
                     {
                         "category": "ELECTRONICS",
-                        "type": "CONVERSION",
-                        "count": 19
+                        "type": "ENGAGEMENT",
+                        "count": 20
                     },
                     {
                         "category": "ELECTRONICS",
-                        "type": "ENGAGEMENT",
-                        "count": 20
+                        "type": "AWARENESS",
+                        "count": 26
+                    },
+                    {
+                        "category": "TOYS",
+                        "type": "CONVERSION",
+                        "count": 17
                     },
                     {
                         "category": "HOME",
                         "type": "AWARENESS",
                         "count": 15
+                    },
+                    {
+                        "category": "HOME",
+                        "type": "ENGAGEMENT",
+                        "count": 25
                     },
                     {
                         "category": "HOME",
@@ -193,7 +194,8 @@ NOTE: In the project files, there are describtions to explain what is happening 
    
 3) CATEGORY AND TYPE PERFORMANCE ENDPOINT RESPONSE SCREENSHOT:
 
-   <img src="/Users/dardalyan/Desktop/CategoryAndType Performance.png"/> 
+    <img width="1505" alt="CategoryAndType Performance" src="https://github.com/user-attachments/assets/98000551-dadd-4a47-b4c8-cae1676c8bf5">
+
 
     THE WHOLE CATEGORY AND TYPE PERFORMANCE ENDPOINT RESPONSE:
 
@@ -265,7 +267,8 @@ NOTE: In the project files, there are describtions to explain what is happening 
    
 4) FILTER AND AGGREGATE ENDPOINT RESPONSE SCREENSHOT:
    
-    <img src="/Users/dardalyan/Desktop/FilterAndAggregate.png"/>
+    <img width="1505" alt="FilterAndAggregate" src="https://github.com/user-attachments/assets/3c833b9a-e6a3-4bcf-9522-f68c21272718">
+
 
    THE WHOLE FILTER AND AGGREGATE ENDPOINT RESPONSE:
 

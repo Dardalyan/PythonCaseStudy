@@ -247,7 +247,7 @@ class MockUpInterview:
 
             average_info[id] = {'average_revenue':total_rev/count, 'average_conversions':total_conv/count}
 
-        #print(f"\n -> Avarage Revenue and Avarage Conversions Per Customer ID : {avarage_info}")
+        #print(f"\n -> Average Revenue and Average Conversions Per Customer ID : {average_info}")
 
         # Returning result in dict type to use them later on the Serializer Result class.
         return {
