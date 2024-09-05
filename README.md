@@ -193,7 +193,7 @@ NOTE: In the project files, there are describtions to explain what is happening 
    
 3) CATEGORY AND TYPE PERFORMANCE ENDPOINT RESPONSE SCREENSHOT:
 
-   ![CategoryAndType Performance.png](..%2F..%2FCategoryAndType%20Performance.png)
+   <img src="/Users/dardalyan/Desktop/CategoryAndType Performance.png"/> 
 
     THE WHOLE CATEGORY AND TYPE PERFORMANCE ENDPOINT RESPONSE:
 
@@ -265,7 +265,7 @@ NOTE: In the project files, there are describtions to explain what is happening 
    
 4) FILTER AND AGGREGATE ENDPOINT RESPONSE SCREENSHOT:
    
-    ![FilterAndAggregate.png](..%2F..%2FFilterAndAggregate.png)
+    <img src="/Users/dardalyan/Desktop/FilterAndAggregate.png"/>
 
    THE WHOLE FILTER AND AGGREGATE ENDPOINT RESPONSE:
 
