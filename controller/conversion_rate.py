@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from serializer.mockupInterviewResult import MockupInterviewResult
+from serializer.DataAnalystResult import DataAnalystResult
 
 
 class ConversionRate(APIView):
@@ -14,7 +14,7 @@ class ConversionRate(APIView):
         # In response, result data comes from serializer.mockupInterviewResult.MockupInterviewResult() class
         return Response(data={
             'message':'Conversion rate has been calculated for all customers.',
-            'result':MockupInterviewResult().conversion_rate_calculation
+            'result':DataAnalystResult().conversion_rate_calculation
         },
             status=status.HTTP_200_OK)
 

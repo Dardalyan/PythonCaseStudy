@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from serializer.mockupInterviewResult import MockupInterviewResult
+from serializer.DataAnalystResult import DataAnalystResult
 
 
 class StatusBasedAnalysis(APIView):
@@ -15,7 +15,7 @@ class StatusBasedAnalysis(APIView):
         # In response, result data comes from serializer.mockupInterviewResult.MockupInterviewResult() class
         return Response(data={
             'message':'Total revenue and total conversions for all status type have been determined.',
-            'result':MockupInterviewResult().status_based_analysis
+            'result':DataAnalystResult().status_based_analysis
         },
             status=status.HTTP_200_OK)
 

@@ -5,12 +5,12 @@ import pandas as pd
 #          I handled all the subtasks such as 'Conversion Rate Calculation' : in some spesific purposed classmethods
 
 
-class MockUpInterview:
+class DataAnalyst:
     """
     This class is designed to handle subtasks of the TASK 1.
     """
 
-    __dataSet = pd.read_csv('mockupinterviewdata.csv') #Keys->['customer_id', 'revenue', 'conversions', 'status', 'type', 'category','date', 'impressions', 'clicks']
+    __dataSet = pd.read_csv('data.csv') #Keys->['customer_id', 'revenue', 'conversions', 'status', 'type', 'category','date', 'impressions', 'clicks']
 
     __customer_id_list = sorted(list(set(__dataSet['customer_id']))) # [Customer A, Customer B, Customer C]
 

@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from serializer.mockupInterviewResult import MockupInterviewResult
+from serializer.DataAnalystResult import DataAnalystResult
 
 
 class CategoryAndTypePerformance(APIView):
@@ -14,7 +14,7 @@ class CategoryAndTypePerformance(APIView):
         # In response, result data comes from serializer.mockupInterviewResult.MockupInterviewResult() class
         return Response(data={
             'message':'Total revenue and total conversions have been calculated for all combinations and (category-type) combination that generates the most conversions has been identified.',
-            'result':MockupInterviewResult().category_and_type_performance
+            'result':DataAnalystResult().category_and_type_performance
         },
             status=status.HTTP_200_OK)
 

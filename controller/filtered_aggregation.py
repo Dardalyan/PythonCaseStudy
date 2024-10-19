@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from serializer.mockupInterviewResult import MockupInterviewResult
+from serializer.DataAnalystResult import DataAnalystResult
 
 
 class FilteredAggregation(APIView):
@@ -14,7 +14,7 @@ class FilteredAggregation(APIView):
         # In response, result data comes from serializer.mockupInterviewResult.MockupInterviewResult() class
         return Response(data={
             'message':'Dataset filtering by the type which is CONVERSION, filtered dataset aggregation, average revenue and average conversions per customer_id have been provided. ',
-            'result':MockupInterviewResult().filter_and_aggregate
+            'result':DataAnalystResult().filter_and_aggregate
         },
             status=status.HTTP_200_OK)
 
